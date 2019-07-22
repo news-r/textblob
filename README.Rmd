@@ -1,0 +1,53 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+
+reticulate::use_virtualenv("./env", required = TRUE)
+```
+<!-- badges: start -->
+<!-- badges: end -->
+
+# textblob
+
+Integrates [TextBlob](https://textblob.readthedocs.io) with R.
+
+## Installation
+
+First, install the package using `remotes`.
+
+``` r
+# install.packages("remotes")
+remotes::install_github("news-r/textblob")
+```
+
+Then install the python dependencies.
+
+```r
+textblob::install_textblob()
+textblob::install_corpora()
+```
+
+This will install `textblob` and download the necessary NLTK corpora.
+
+## Example
+
+
+```{r example}
+library(textblob)
+
+wiki <- text_blob("R is an awesome programmming language") 
+
+wiki$sentiment
+
+wiki$correct()
+```

@@ -1,0 +1,20 @@
+Package: textblob
+Title: Integration of 'TextBlob'
+Version: 0.0.0.9000
+Authors@R: 
+    c(person(given = "John",
+           family = "Coene",
+           role = c("aut", "cre"),
+           email = "jcoenep@gmail.com",
+           comment = c(ORCID = "0000-0002-6637-4107")),
+       person(family = "news-r", role = "cph"))
+Description: Provides a simple API for diving into common natural language processing (NLP) tasks such as part-of-speech tagging, noun phrase extraction, sentiment analysis, classification, translation, and more.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    cli,
+    crayon,
+    reticulate,
+    assertthat
+RoxygenNote: 6.1.1
