@@ -1,22 +1,8 @@
----
-output: 
-  github_document:
-    html_preview: false
----
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
-)
-
-reticulate::use_virtualenv("./env", required = TRUE)
-```
 <!-- badges: start -->
+
 <!-- badges: end -->
 
 # textblob
@@ -34,7 +20,7 @@ remotes::install_github("news-r/textblob")
 
 Then install the python dependencies.
 
-```r
+``` r
 textblob::install_textblob()
 textblob::install_corpora()
 ```
@@ -43,13 +29,14 @@ This will install `textblob` and download the necessary NLTK corpora.
 
 ## Example
 
-
-```{r example}
+``` r
 library(textblob)
 
 wiki <- text_blob("R is an awesome programmming language") 
 
 wiki$sentiment
+#> Sentiment(polarity=1.0, subjectivity=1.0)
 
 wiki$correct()
+#> R is an awesome programming language
 ```
