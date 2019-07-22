@@ -17,6 +17,7 @@ knitr::opts_chunk$set(
 reticulate::use_virtualenv("./env", required = TRUE)
 ```
 <!-- badges: start -->
+[![Travis build status](https://travis-ci.org/news-r/textblob.svg?branch=master)](https://travis-ci.org/news-r/textblob)
 <!-- badges: end -->
 
 # textblob
