@@ -4,10 +4,12 @@
 \alias{text_blob}
 \title{Create a blob}
 \usage{
-text_blob(text)
+text_blob(text, ...)
 }
 \arguments{
 \item{text}{Text to create a blob from.}
+
+\item{...}{Any other options passed to \code{TextBlob}.}
 }
 \description{
 Create a \code{TextBlob}.

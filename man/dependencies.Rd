@@ -3,12 +3,15 @@
 \name{dependencies}
 \alias{dependencies}
 \alias{install_textblob}
-\alias{install_corpora}
+\alias{download_corpora}
+\alias{download_corpora_lite}
 \title{Install Dependencies}
 \usage{
 install_textblob(envname = NULL, method = "auto", conda = "auto")
 
-install_corpora()
+download_corpora()
+
+download_corpora_lite()
 }
 \arguments{
 \item{envname}{Name of environment to install packages into}
@@ -25,6 +28,14 @@ Note that the "virtualenv" method is not available on Windows.}
 Install the \href{https://textblob.readthedocs.io/en/dev/quickstart.html}{TextBlob}. 
 Arguments are passed to \link[reticulate]{py_install}.
 }
+\section{Corpora}{
+
+\itemize{
+  \item{\code{download_corpora} - Downloads the necessary NLTK corpora for TextBlob.}
+  \item{\code{download_corpora_lite} - If you only intend to use TextBlob's default models, you can use the "lite" option.}
+}
+}
+
 \examples{
 \dontrun{install_textblob()}
 

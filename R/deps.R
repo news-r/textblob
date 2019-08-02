@@ -11,6 +11,12 @@
 #' @param conda Path to conda executable (or "auto" to find conda using the
 #' \code{PATH} and other conventional install locations).
 #' 
+#' @section Corpora:
+#' \itemize{
+#'   \item{\code{download_corpora} - Downloads the necessary NLTK corpora for TextBlob.}
+#'   \item{\code{download_corpora_lite} - If you only intend to use TextBlob's default models, you can use the "lite" option.}
+#' }
+#' 
 #' @examples
 #' \dontrun{install_textblob()}
 #' 
@@ -24,7 +30,14 @@ install_textblob <- function(envname = NULL, method = "auto", conda = "auto") {
 
 #' @rdname dependencies
 #' @export
-install_corpora <- function(){
-  file <- system.file("scripts/corpora.py", package = "textblob")
-  cat(crayon::red(cli::symbol$cross), "Does not work yet, see README")
+download_corpora <- function(){
+  textblob$download_corpora$download_all()
+  invisible()
+}
+
+#' @rdname dependencies
+#' @export
+download_corpora_lite <- function(){
+  textblob$download_corpora$download_lite()
+  invisible()
 }

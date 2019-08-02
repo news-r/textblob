@@ -3,6 +3,7 @@
 #' Create a \code{TextBlob}.
 #' 
 #' @param text Text to create a blob from.
+#' @param ... Any other options passed to \code{TextBlob}.
 #' 
 #' @examples
 #' \dontrun{

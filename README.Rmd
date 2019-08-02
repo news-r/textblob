@@ -34,11 +34,25 @@ First, install the package using `remotes`.
 remotes::install_github("news-r/textblob")
 ```
 
-Then install the python dependencies.
+Then install the python dependencies, only do this one per virtual environment.
 
 ```r
-textblob::install_textblob()
-textblob::install_corpora()
+# replace with path of your choice
+my_env <- "./env"
+
+# run this (works on unix)
+args <- paste("-m venv", my_env) gensim & scikit-learn
+system2("python3", args) # create environment
+reticulate::use_virtualenv(my_env) # force reticulate to use env
+# install textblob in environment
+textblob::install_textblob(my_env)
+```
+
+Then download the necessary NLTK datasets, note that there is a lite version. 
+
+```r
+# download corpora
+textblob::download_corpora() 
 ```
 
 This will install `textblob` and download the necessary NLTK corpora.
@@ -49,9 +63,18 @@ This will install `textblob` and download the necessary NLTK corpora.
 ```{r example}
 library(textblob)
 
-wiki <- text_blob("R is an awesome programmming language") 
+string <- paste(
+  "R is a programmming langage and free software",
+  "environment for statistical computing and",
+  "graphics supported by the R Foundation for",
+  "Statistical Computing."
+)
 
-wiki$sentiment
+wiki <- text_blob(string) 
 
-wiki$correct()
+wiki$sentiment # get sentiment
+
+wiki$correct() # correct programmming langage
+
+wiki$translate(to = "es") # translate
 ```
