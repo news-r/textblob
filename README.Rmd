@@ -41,7 +41,7 @@ Then install the python dependencies, only do this one per virtual environment.
 my_env <- "./env"
 
 # run this (works on unix)
-args <- paste("-m venv", my_env) gensim & scikit-learn
+args <- paste("-m venv", my_env) 
 system2("python3", args) # create environment
 reticulate::use_virtualenv(my_env) # force reticulate to use env
 # install textblob in environment

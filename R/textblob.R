@@ -5,6 +5,9 @@
 #' @param text Text to create a blob from.
 #' @param ... Any other options passed to \code{TextBlob}.
 #' 
+#' @import purrr
+#' @import reticulate
+#' 
 #' @examples
 #' \dontrun{
 #' text_blob("R is a programming language")  

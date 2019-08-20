@@ -20,6 +20,7 @@
 #' @examples
 #' \dontrun{install_textblob()}
 #' 
+#' @import reticulate
 #' @import assertthat
 #' 
 #' @name dependencies
